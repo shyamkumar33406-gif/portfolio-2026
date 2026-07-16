@@ -1,0 +1,130 @@
+{
+  "theme": "dark",
+  "colors": {
+    "background_primary": "#050505",
+    "background_secondary": "#0A0A0A",
+    "surface": "#111111",
+    "primary_accent": "#1D35FF",
+    "primary_accent_glow": "rgba(29, 53, 255, 0.4)",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#A1A1AA",
+    "text_muted": "#52525B",
+    "glass_bg": "rgba(255, 255, 255, 0.02)",
+    "glass_border": "rgba(29, 53, 255, 0.15)",
+    "border_subtle": "rgba(255, 255, 255, 0.08)"
+  },
+  "typography": {
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&display=swap",
+    "heading_font": "'Fraunces', serif",
+    "body_font": "'Manrope', sans-serif",
+    "pairing_strategy": "Use Manrope for all functional UI, body copy, and secondary headings (technical, sterile, precise). Use Fraunces explicitly for large manifesto numbers, signature quotes, and high-impact elegant moments (artistic, emotional contrast).",
+    "scales": {
+      "hero_title": "text-5xl sm:text-6xl md:text-7xl lg:text-[6rem] leading-[0.9] tracking-tighter font-medium",
+      "h2": "text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight",
+      "h3": "text-2xl sm:text-3xl tracking-tight",
+      "h4": "text-lg sm:text-xl font-medium",
+      "body": "text-base lg:text-lg leading-relaxed font-light",
+      "overline": "text-xs tracking-[0.2em] uppercase font-bold text-[#1D35FF]"
+    }
+  },
+  "spacing_scale": {
+    "section_y": "py-24 md:py-32 lg:py-40",
+    "container_padding": "px-6 md:px-12 lg:px-24",
+    "gap_small": "gap-4 md:gap-6",
+    "gap_medium": "gap-8 md:gap-12",
+    "gap_large": "gap-16 md:gap-24"
+  },
+  "motion": {
+    "libraries": ["framer-motion", "lenis"],
+    "easings": {
+      "cinematic": "[0.76, 0, 0.24, 1]",
+      "snappy": "[0.175, 0.885, 0.32, 1.275]"
+    },
+    "durations": {
+      "fast": "0.3s",
+      "medium": "0.8s",
+      "slow": "1.2s"
+    },
+    "tokens": {
+      "hero_reveal": {
+        "initial": { "y": "100%", "opacity": 0, "rotate": 2 },
+        "animate": { "y": 0, "opacity": 1, "rotate": 0 },
+        "transition": { "duration": 1.2, "ease": "[0.76, 0, 0.24, 1]", "staggerChildren": 0.15 }
+      },
+      "scroll_fade_up": {
+        "initial": { "y": 40, "opacity": 0, "filter": "blur(10px)" },
+        "whileInView": { "y": 0, "opacity": 1, "filter": "blur(0px)" },
+        "viewport": { "once": true, "margin": "-100px" },
+        "transition": { "duration": 0.8, "ease": "[0.76, 0, 0.24, 1]" }
+      }
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": "backdrop-blur-xl bg-white/[0.02] border border-white/[0.05] hover:border-[#1D35FF]/30 transition-colors duration-500",
+    "automotive_motifs": "Subtle curved SVG background lines (stroke width 1px, opacity 0.1) imitating wind tunnel/speed lines. Use 'gauge' or 'dial' style circular progress for specific skills. Do NOT overdo it—keep it abstract.",
+    "clipped_frames": "Real images should be placed inside sharp rectangles or slightly rounded (rounded-lg) containers, heavily desaturated or black-and-white by default, transitioning to full color on hover.",
+    "spotlight_effect": "A soft radial gradient behind primary elements (like the hero text or featured project) using 'radial-gradient(circle at center, rgba(29,53,255,0.15) 0%, transparent 60%)'."
+  },
+  "media": {
+    "image_urls": [
+      {
+        "category": "Hero / Profile",
+        "url": "https://images.unsplash.com/photo-1634733049839-0292be607569?q=85",
+        "description": "Dark moody portrait for the designer profile image. Apply grayscale with hover effect."
+      },
+      {
+        "category": "Studio Spot Concept (Neon)",
+        "url": "https://images.pexels.com/photos/37310331/pexels-photo-37310331.jpeg",
+        "description": "Neon recording studio aesthetic for the Featured Project background/context."
+      },
+      {
+        "category": "Studio Spot Alternative (Atmosphere)",
+        "url": "https://images.unsplash.com/photo-1613870948964-7125fa3e1aab",
+        "description": "Red/Neon vibe for the studio booking app case study."
+      },
+      {
+        "category": "Wireframes / Process",
+        "url": "https://images.unsplash.com/photo-1623697899811-f2403f50685e?q=85",
+        "description": "Clean sketchbook/wireframe aesthetic for the Design Process section."
+      }
+    ]
+  },
+  "layouts": {
+    "hero": "100vh height. Kinetic layout. Left: Massive H1 text 'Designing Intuitive Digital Experiences That People Love' with a strict masked line-by-line Framer Motion reveal. Right/Bottom: Clipped portrait photo overlapping a subtle #1D35FF curved abstract vector line. Include a custom signature loading animation (SVG path drawing) that resolves into the hero.",
+    "marquee": "Full-width overflow-hidden. Very slow editorial marquee (using react-fast-marquee). Text: 'UI/UX DESIGNER • PROBLEM SOLVER • CREATIVE DEVELOPER'. Styling: text-transparent text-stroke-1 text-stroke-white text-8xl font-fraunces.",
+    "about_manifesto": "Bento-style or asymmetrical grid. Numbered chapters (e.g., '01', '02') using giant Fraunces typography in #1D35FF. Beside the number, a clean Manrope paragraph detailing passion, user-centered approach, and continuous learning.",
+    "skills_and_tools": "High density grid. Skills represented as automotive-inspired minimalist 'dials' or progress arcs. Tools (Figma, Framer, etc.) presented as glassmorphic chips that float slightly on hover.",
+    "featured_project": "Studio Spot (booking platform). Immersive section. Large clipped image of the neon studio/UI. Text content: Problem, Research, User Flow, UI, Outcome. Use overlapping cards with high backdrop-blur over the neon imagery.",
+    "design_process": "Horizontal or winding 'track' layout (referencing automotive). Empathize → Define → Research → Ideate → Wireframe → Prototype → Test. Connected by a glowing #1D35FF SVG line that draws itself on scroll.",
+    "contact": "Large, bold typography 'LET'S TALK' in Fraunces. A clean, minimal form mapped to MongoDB (via backend). Links to LinkedIn, Behance. Footer must be dense and architectural."
+  },
+  "components": {
+    "button": "Pill-shaped (rounded-full). Dark variant: bg-transparent border border-[#1D35FF] text-[#1D35FF] hover:bg-[#1D35FF] hover:text-white. Solid variant: bg-[#1D35FF] text-white hover:bg-white hover:text-black. Transitions must be fluid.",
+    "card": "Glassmorphism base: bg-white/[0.02] border border-white/[0.05]. No harsh drop shadows; rely on inner borders and ambient background glows.",
+    "input": "bg-transparent border-b border-white/[0.2] focus:border-[#1D35FF] text-white py-4 px-0 outline-none transition-colors rounded-none. No default HTML inputs."
+  },
+  "accessibility": {
+    "contrast": "Ensure #A1A1AA text passes contrast on #050505. Avoid pure #1D35FF text on dark backgrounds without sufficient font weight.",
+    "reduced_motion": "Wrap Framer Motion hooks with useReducedMotion to disable heavy parallax for sensitive users.",
+    "data_testids": "MANDATORY: Add semantic kebab-case data-testid attributes to all interactive elements (e.g., data-testid='hero-cta-button', data-testid='contact-form-submit')."
+  },
+  "instructions_to_main_agent": [
+    "Strictly adhere to the dark theme #050505 and #1D35FF electric blue accent. Do NOT use default Tailwind blue.",
+    "Implement the custom font pairing (Fraunces + Manrope) via next/font or Google Fonts CDN.",
+    "Use standard HTML/Tailwind for the marketing layout, avoiding rigid generic UI components (like standard Shadcn cards) in favor of the custom glassmorphism aesthetic.",
+    "Implement Lenis for smooth scrolling in the main layout wrapper.",
+    "Ensure the hero text uses a staggered overflow-hidden line reveal animation (Framer Motion).",
+    "All image treatments must follow the 'clipped frame' desaturated-to-color hover logic.",
+    "Create the contact form and handle the MongoDB backend connection as specified."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic outputs. Avoid the 'AI slop' aesthetic. Make this portfolio feel like an Awwwards Site of the Day.",
+    "DO NOT use complete transparent backgrounds in headers or dropdowns—always use a backdrop-blur.",
+    "DO NOT apply universal transitions (e.g., transition: all). Add explicit transitions to properties like background-color, border-color, and opacity.",
+    "DO NOT center align app containers (no .App { text-align: center }). Use asymmetrical, left-aligned structural grids.",
+    "Create depth through layered design elements (z-index) and ambient lighting behind sections.",
+    "Never use generic AI emojis (🤖💡) for icons. Use high-quality SVG libraries like Phosphor or Lucide.",
+    "Every interaction needs a micro-animation (hover state, focus state).",
+    "Use generous spacing (2-3x standard padding)."
+  ]
+}

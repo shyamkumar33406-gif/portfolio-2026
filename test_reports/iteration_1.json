@@ -1,0 +1,41 @@
+{
+  "summary": "First-finish smoke test for Aria Vesper portfolio (static content + /api/contact). All 5 backend endpoints and 14/15 frontend flows verified. Contact form end-to-end (UI -> API -> Mongo persistence) works. One low-priority UX gap: empty-form submit relies on native HTML5 required validation instead of a visible error toast.",
+  "tested_scope": ["frontend", "backend", "integration"],
+  "passed": [
+    "GET /api/ -> 200 {message: 'Portfolio API is live'}",
+    "POST /api/contact valid payload -> 200 {success:true, id, message}",
+    "POST /api/contact missing fields -> 422 pydantic errors",
+    "POST /api/contact invalid email -> 422 EmailStr error",
+    "GET /api/contact -> 200 list, submitted T1 message persisted in Mongo",
+    "Frontend loads, preloader animates and disappears",
+    "Hero CTAs 'hero-cta-view-work' and 'hero-cta-download-resume' visible; clicking view-work scrolls page (scrollY 4320)",
+    "Nav link 'nav-link-contact' scrolls to contact section (scrollY 8742)",
+    "All 5 about-chapter-01..05 present",
+    "All 5 case-block-{problem,research,user-flow,wireframes,final-ui} present",
+    "All 8 process-step-01..08 present",
+    "Skills tool chips present: Figma, Adobe XD, Framer, Miro, Canva",
+    "Contact form submit with valid data shows success toast 'Message sent. I'll reply within 48 hours.' and record is stored in MongoDB (verified via GET /api/contact)",
+    "Footer text 'Designed & Developed with passion' rendered"
+  ],
+  "failed": [
+    {
+      "area": "frontend/contact",
+      "issue": "Empty-form submit does not display an in-app error toast; submission is blocked by browser native HTML5 'required' validation instead. Functionally does NOT submit (correct), but no toast matching 'error/required/please' was found in body text.",
+      "evidence": "EMPTY_SUBMIT_ERROR_INDICATION: False after clicking contact-submit with all fields empty; no /api/contact POST fired.",
+      "priority": "LOW"
+    },
+    {
+      "area": "frontend/hero",
+      "issue": "Exact-text match for hero heading 'Designing intuitive digital experiences that people love.' returned not-visible via Playwright text= locator, likely because the kinetic masked line reveal splits characters/words into separate spans. Visually the heading renders correctly (confirmed in screenshot flow).",
+      "evidence": "HERO_HEADING_VISIBLE: False from text= locator; hero section otherwise interactive (CTAs visible, view-work scroll works).",
+      "priority": "LOW"
+    }
+  ],
+  "action_items": [
+    "Optional: emit an in-app toast (e.g., 'Please fill all required fields') when contact-submit is clicked with empty required inputs, instead of relying solely on native HTML5 validation, to match the spec's 'shows error toast' requirement.",
+    "Optional: add data-testid='hero-heading' on the heading container so automation can assert visibility without depending on the split-span text nodes."
+  ],
+  "success_rate": {"backend": "100%", "frontend": "93%"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}

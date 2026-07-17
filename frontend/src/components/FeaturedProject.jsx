@@ -68,7 +68,7 @@ export default function FeaturedProject() {
             ["Role", "Lead Designer"],
             ["Timeline", "12 Weeks"],
             ["Tools", "Figma · Miro"],
-            ["Platform", "iOS · Web"],
+            ["Platform", "Mobile App"],
           ].map(([k, v]) => (
             <div key={k} className="glass p-4 rounded-md">
               <div className="text-[10px] uppercase tracking-[0.25em] text-chalk-faint">{k}</div>
@@ -156,7 +156,61 @@ export default function FeaturedProject() {
         </div>
       </div>
 
-      {/* Outcome banner */}
+      {/* User Flow diagram — the workflow */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.9, ease: easing }}
+        className="mt-24 md:mt-32"
+        data-testid="case-userflow-diagram"
+      >
+        <div className="flex items-center gap-3 text-xs tracking-[0.28em] uppercase text-electric mb-8">
+          <span className="w-8 h-[1px] bg-electric" />
+          User Flow — The Workflow
+        </div>
+
+        <div className="glass rounded-md p-6 md:p-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 relative">
+            {[
+              { step: "Discover", n: "01", nodes: ["Browse feed", "Apply filters", "Search by city"] },
+              { step: "Preview", n: "02", nodes: ["View photos & gear", "Check calendar", "Read reviews"] },
+              { step: "Book", n: "03", nodes: ["Instant confirm", "Chat with owner", "Pay securely"] },
+            ].map((col, ci) => (
+              <div key={col.step} className="relative">
+                {/* connector arrow between columns */}
+                {ci < 2 && (
+                  <div className="hidden md:flex absolute top-8 -right-2 z-10 text-electric">
+                    <ArrowUpRight size={22} className="rotate-45" />
+                  </div>
+                )}
+                <div className="flex items-baseline gap-3 mb-5">
+                  <span className="font-serif text-4xl text-electric">{col.n}</span>
+                  <span className="text-lg md:text-xl text-white font-medium">{col.step}</span>
+                </div>
+                <div className="space-y-3">
+                  {col.nodes.map((node, ni) => (
+                    <motion.div
+                      key={node}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: ci * 0.15 + ni * 0.08, ease: easing }}
+                      className="flex items-center gap-3 border border-white/[0.08] rounded-md px-4 py-3 bg-white/[0.015]"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-electric shrink-0" />
+                      <span className="text-sm text-white/80">{node}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-xs uppercase tracking-[0.25em] text-chalk-faint">
+            Two personas · Ad-hoc creator + regular studio-hopper · Avg. 90-second booking
+          </p>
+        </div>
+      </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

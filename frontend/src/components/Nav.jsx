@@ -41,7 +41,7 @@ export default function Nav() {
           className="flex items-center gap-2 text-sm tracking-[0.25em] uppercase text-white"
         >
           <span className="inline-block w-2 h-2 rounded-full bg-electric shadow-[0_0_20px_4px_rgba(29,53,255,0.6)]" />
-          Aria/Vesper
+          Shyam/Kumar
         </button>
 
         <nav className="hidden md:flex items-center gap-10">

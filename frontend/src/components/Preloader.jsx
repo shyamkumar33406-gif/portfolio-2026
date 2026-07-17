@@ -35,7 +35,7 @@ export default function Preloader({ onComplete }) {
         >
           {/* Top row */}
           <div className="flex items-start justify-between text-xs tracking-[0.25em] uppercase text-chalk-muted">
-            <span>Aria Vesper</span>
+            <span>Shyam Kumar</span>
             <span className="hidden md:inline">© 2026 — Portfolio</span>
           </div>
 

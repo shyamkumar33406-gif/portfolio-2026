@@ -8,10 +8,10 @@ const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 const easing = [0.76, 0, 0.24, 1];
 
 const CONTACTS = [
-  { icon: Mail, label: "Email", value: "hello@ariavesper.design", href: "mailto:hello@ariavesper.design", id: "email" },
-  { icon: Phone, label: "Phone", value: "+1 (555) 041-2026", href: "tel:+15550412026", id: "phone" },
-  { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/ariavesper", href: "https://linkedin.com/in/ariavesper", id: "linkedin" },
-  { icon: ArrowUpRight, label: "Behance", value: "behance.net/ariavesper", href: "https://behance.net/ariavesper", id: "behance" },
+  { icon: Mail, label: "Email", value: "shyamkumar33406@gmail.com", href: "mailto:shyamkumar33406@gmail.com", id: "email" },
+  { icon: Phone, label: "Phone", value: "+91 93447 61399", href: "tel:+919344761399", id: "phone" },
+  { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/shyam-kumar-a", href: "https://www.linkedin.com/in/shyam-kumar-a-8a1990303/", id: "linkedin" },
+  { icon: ArrowUpRight, label: "Behance", value: "behance.net/shyamkumara", href: "https://www.behance.net/shyamkumara", id: "behance" },
 ];
 
 export default function Contact() {
@@ -111,7 +111,6 @@ export default function Contact() {
               onChange={onChange("name")}
               placeholder="Your full name"
               testid="input-name"
-              required
             />
             <Field
               label="Email"
@@ -120,7 +119,6 @@ export default function Contact() {
               placeholder="you@company.com"
               type="email"
               testid="input-email"
-              required
             />
             <Field
               label="Subject"
@@ -135,7 +133,6 @@ export default function Contact() {
               onChange={onChange("message")}
               placeholder="Tell me about the project, timeline, and team."
               testid="input-message"
-              required
             />
           </div>
 

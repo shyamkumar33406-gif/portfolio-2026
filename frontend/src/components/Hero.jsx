@@ -94,7 +94,7 @@ export default function Hero({ ready }) {
           </motion.span>
         </div>
 
-        <h1 className="font-serif font-light text-[13vw] md:text-[10vw] lg:text-[8.5vw] leading-[0.92] tracking-[-0.03em]">
+        <h1 data-testid="hero-heading" className="font-serif font-light text-[13vw] md:text-[10vw] lg:text-[8.5vw] leading-[0.92] tracking-[-0.03em]">
           {ready && (
             <>
               <LineReveal delay={0.15}>Designing</LineReveal>
@@ -169,12 +169,12 @@ export default function Hero({ ready }) {
         <div className="relative w-full h-full overflow-hidden grayscale-image">
           <img
             src="https://images.unsplash.com/photo-1634733049839-0292be607569?q=85&w=800&auto=format&fit=crop"
-            alt="Aria Vesper portrait"
+            alt="Shyam Kumar portrait"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-ink-0/70 via-transparent to-transparent" />
           <div className="absolute bottom-3 left-3 right-3 flex justify-between text-[10px] tracking-[0.25em] uppercase text-white">
-            <span>A / V</span>
+            <span>S / K</span>
             <span>N° 001</span>
           </div>
         </div>

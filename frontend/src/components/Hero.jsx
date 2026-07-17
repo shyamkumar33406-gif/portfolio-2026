@@ -168,7 +168,7 @@ export default function Hero({ ready }) {
         <div className="absolute inset-0 border border-electric/40 translate-x-3 translate-y-3" />
         <div className="relative w-full h-full overflow-hidden grayscale-image">
           <img
-            src="https://images.unsplash.com/photo-1634733049839-0292be607569?q=85&w=800&auto=format&fit=crop"
+            src="https://customer-assets-gfyr7b9c.emergentagent.net/job_interface-labs-1/artifacts/q7zmu86z_WhatsApp%20Image%202026-07-17%20at%2011.02.43%20AM.jpeg"
             alt="Shyam Kumar portrait"
             className="w-full h-full object-cover"
           />

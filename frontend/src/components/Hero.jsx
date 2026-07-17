@@ -142,8 +142,10 @@ export default function Hero({ ready }) {
             </button>
 
             <a
-              href="#"
-              onClick={(e) => e.preventDefault()}
+              href="https://customer-assets-gfyr7b9c.emergentagent.net/job_interface-labs-1/artifacts/fti88o6e_Shyam%20Kumar%20UIUX%20CV.pdf"
+              download="Shyam-Kumar-UIUX-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               data-testid="hero-cta-download-resume"
               className="group inline-flex items-center justify-between gap-6 border border-white/20 text-white pl-6 pr-3 py-3 rounded-full text-sm uppercase tracking-[0.15em] hover:border-electric hover:text-electric transition-colors duration-500"
             >

@@ -1,4 +1,4 @@
-# PRD — Aria Vesper · UI/UX Designer Portfolio
+# PRD — Shyam Kumar · UI/UX Designer Portfolio
 
 ## Original problem statement
 Award-worthy (Awwwards SOTD-level) UI/UX Designer portfolio for a fresher.

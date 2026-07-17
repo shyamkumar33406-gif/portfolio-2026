@@ -236,6 +236,65 @@ export default function FeaturedProject() {
           <ArrowUpRight size={16} className="group-hover:rotate-45 transition-transform duration-500" />
         </a>
       </motion.div>
+
+      {/* Hero Section Studies — additional works */}
+      <div className="mt-24 md:mt-32" data-testid="hero-studies">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+          <div>
+            <div className="flex items-center gap-3 text-xs tracking-[0.28em] uppercase text-electric mb-6">
+              <span className="w-8 h-[1px] bg-electric" />
+              More Works — Hero Section Studies
+            </div>
+            <h3 className="font-serif font-light text-4xl md:text-6xl leading-[0.95] tracking-tight">
+              Landing <span className="italic">explorations.</span>
+            </h3>
+          </div>
+          <p className="max-w-sm text-chalk-muted text-base md:text-lg font-light">
+            Selected high-fidelity hero concepts — exploring bold layout, motion cues, and brand-led color.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {[
+            {
+              src: "https://customer-assets-gfyr7b9c.emergentagent.net/job_interface-labs-1/artifacts/s83sesd9_Desktop%20-%2031.jpg",
+              title: "Porsche GT3 RS",
+              tag: "Automotive · Hero Concept",
+              n: "02",
+            },
+            {
+              src: "https://customer-assets-gfyr7b9c.emergentagent.net/job_interface-labs-1/artifacts/26p5irpf_Desktop%20-%2041.jpg",
+              title: "You-Gaming",
+              tag: "Gaming · Landing Page",
+              n: "03",
+            },
+          ].map((w, i) => (
+            <motion.div
+              key={w.title}
+              initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.9, delay: i * 0.1, ease: easing }}
+              className="group"
+              data-testid={`hero-study-${w.n}`}
+            >
+              <div className="relative overflow-hidden rounded-md border border-white/[0.06] grayscale-image">
+                <img
+                  src={w.src}
+                  alt={`${w.title} — hero section design`}
+                  className="w-full aspect-[16/11] object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+                <div className="absolute top-4 left-4 text-xs uppercase tracking-[0.25em] text-white/70">N° {w.n}</div>
+              </div>
+              <div className="mt-4 flex items-baseline justify-between">
+                <h4 className="font-serif text-xl md:text-2xl text-white">{w.title}</h4>
+                <span className="text-xs uppercase tracking-[0.2em] text-chalk-faint">{w.tag}</span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

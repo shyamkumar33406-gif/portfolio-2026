@@ -128,7 +128,7 @@ export default function FeaturedProject() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: easing }}
-            className="glass p-8 rounded-md sticky top-24"
+            className="glass p-8 rounded-md"
           >
             <div className="text-xs uppercase tracking-[0.28em] text-electric mb-6">Key Features</div>
             <ul className="space-y-4">
@@ -153,10 +153,46 @@ export default function FeaturedProject() {
               ))}
             </div>
           </motion.div>
+
+          {/* Full case study board image */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, ease: easing }}
+            className="glass p-4 rounded-md"
+            data-testid="case-study-board"
+          >
+            <div className="flex items-center justify-between mb-4 px-2 pt-1">
+              <div className="text-xs uppercase tracking-[0.28em] text-electric">Case Study Board</div>
+              <a
+                href="https://customer-assets-gfyr7b9c.emergentagent.net/job_interface-labs-1/artifacts/y28afleg_Case%20Study.webp"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="case-board-open-full"
+                className="group inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-chalk-muted hover:text-electric transition-colors duration-500"
+              >
+                Open Full
+                <ArrowUpRight size={13} className="group-hover:rotate-45 transition-transform duration-500" />
+              </a>
+            </div>
+            <div
+              className="relative h-[560px] overflow-y-auto rounded-md border border-white/[0.06] [scrollbar-width:thin]"
+              data-lenis-prevent
+            >
+              <img
+                src="https://customer-assets-gfyr7b9c.emergentagent.net/job_interface-labs-1/artifacts/y28afleg_Case%20Study.webp"
+                alt="Studio Spot — full UI/UX case study board"
+                className="w-full block"
+                loading="lazy"
+              />
+            </div>
+            <p className="mt-3 px-2 pb-1 text-[11px] text-chalk-faint tracking-wide">
+              Scroll to explore the full board — overview, user flow, personas, wireframes & final screens.
+            </p>
+          </motion.div>
         </div>
       </div>
-
-      {/* User Flow diagram — the workflow */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

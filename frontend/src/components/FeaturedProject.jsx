@@ -153,44 +153,6 @@ export default function FeaturedProject() {
               ))}
             </div>
           </motion.div>
-
-          {/* Full case study board image */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, ease: easing }}
-            className="glass p-4 rounded-md"
-            data-testid="case-study-board"
-          >
-            <div className="flex items-center justify-between mb-4 px-2 pt-1">
-              <div className="text-xs uppercase tracking-[0.28em] text-electric">Case Study Board</div>
-              <a
-                href="https://customer-assets-gfyr7b9c.emergentagent.net/job_interface-labs-1/artifacts/y28afleg_Case%20Study.webp"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="case-board-open-full"
-                className="group inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-chalk-muted hover:text-electric transition-colors duration-500"
-              >
-                Open Full
-                <ArrowUpRight size={13} className="group-hover:rotate-45 transition-transform duration-500" />
-              </a>
-            </div>
-            <div
-              className="relative h-[560px] overflow-y-auto rounded-md border border-white/[0.06] [scrollbar-width:thin]"
-              data-lenis-prevent
-            >
-              <img
-                src="https://customer-assets-gfyr7b9c.emergentagent.net/job_interface-labs-1/artifacts/y28afleg_Case%20Study.webp"
-                alt="Studio Spot — full UI/UX case study board"
-                className="w-full block"
-                loading="lazy"
-              />
-            </div>
-            <p className="mt-3 px-2 pb-1 text-[11px] text-chalk-faint tracking-wide">
-              Scroll to explore the full board — overview, user flow, personas, wireframes & final screens.
-            </p>
-          </motion.div>
         </div>
       </div>
       <motion.div
@@ -264,12 +226,13 @@ export default function FeaturedProject() {
           </div>
         </div>
         <a
-          href="#"
-          onClick={(e) => e.preventDefault()}
+          href="https://www.behance.net/gallery/251567735/Studio-Spot-Studio-Booking-Mobile-App-Case-Study/modules/1459827431"
+          target="_blank"
+          rel="noopener noreferrer"
           data-testid="case-cta-full-case"
           className="group inline-flex items-center gap-4 border border-white/15 hover:border-electric hover:text-electric text-white px-6 py-3 rounded-full text-sm tracking-[0.2em] uppercase transition-colors duration-500 shrink-0"
         >
-          Full Case Study
+          View Full Case Study on Behance
           <ArrowUpRight size={16} className="group-hover:rotate-45 transition-transform duration-500" />
         </a>
       </motion.div>

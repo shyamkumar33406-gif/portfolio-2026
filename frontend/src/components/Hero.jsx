@@ -166,13 +166,12 @@ export default function Hero({ ready }) {
         data-testid="hero-portrait"
       >
         <div className="absolute inset-0 border border-electric/40 translate-x-3 translate-y-3" />
-        <div className="relative w-full h-full overflow-hidden grayscale-image">
+        <div className="relative w-full h-full overflow-hidden">
           <img
             src="https://customer-assets-gfyr7b9c.emergentagent.net/job_interface-labs-1/artifacts/q7zmu86z_WhatsApp%20Image%202026-07-17%20at%2011.02.43%20AM.jpeg"
             alt="Shyam Kumar portrait"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink-0/70 via-transparent to-transparent" />
           <div className="absolute bottom-3 left-3 right-3 flex justify-between text-[10px] tracking-[0.25em] uppercase text-white">
             <span>S / K</span>
             <span>N° 001</span>

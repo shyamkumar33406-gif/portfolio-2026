@@ -142,8 +142,8 @@ export default function Hero({ ready }) {
             </button>
 
             <a
-              href="https://customer-assets-gfyr7b9c.emergentagent.net/job_interface-labs-1/artifacts/fti88o6e_Shyam%20Kumar%20UIUX%20CV.pdf"
-              download="Shyam-Kumar-UIUX-CV.pdf"
+              href="https://customer-assets-gfyr7b9c.emergentagent.net/job_interface-labs-1/artifacts/z91iaana_Shyam%20Kumar_Rrsume.pdf"
+              download="Shyam-Kumar-Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               data-testid="hero-cta-download-resume"

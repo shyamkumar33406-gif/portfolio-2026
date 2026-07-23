@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { useRef, useState } from "react";
+import { ArrowUpRight, Award } from "lucide-react";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 const easing = [0.76, 0, 0.24, 1];
 
@@ -40,6 +41,8 @@ export default function FeaturedProject() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const imageY = useTransform(scrollYProgress, [0, 1], [80, -120]);
+  const [certOpen, setCertOpen] = useState(false);
+  const CERT_URL = "https://customer-assets-gfyr7b9c.emergentagent.net/job_interface-labs-1/artifacts/ojxe9m65_UIUX-%20Certificate.jpeg";
 
   return (
     <section
@@ -225,17 +228,48 @@ export default function FeaturedProject() {
             — Studio Spot, founding team
           </div>
         </div>
-        <a
-          href="https://www.behance.net/gallery/251567735/Studio-Spot-Studio-Booking-Mobile-App-Case-Study/modules/1459827431"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-testid="case-cta-full-case"
-          className="group inline-flex items-center gap-4 border border-white/15 hover:border-electric hover:text-electric text-white px-6 py-3 rounded-full text-sm tracking-[0.2em] uppercase transition-colors duration-500 shrink-0"
-        >
-          View Full Case Study on Behance
-          <ArrowUpRight size={16} className="group-hover:rotate-45 transition-transform duration-500" />
-        </a>
+        <div className="flex flex-col gap-3 shrink-0">
+          <a
+            href="https://www.behance.net/gallery/251567735/Studio-Spot-Studio-Booking-Mobile-App-Case-Study/modules/1459827431"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="case-cta-full-case"
+            className="group inline-flex items-center justify-between gap-4 border border-white/15 hover:border-electric hover:text-electric text-white px-6 py-3 rounded-full text-sm tracking-[0.2em] uppercase transition-colors duration-500"
+          >
+            View Full Case Study on Behance
+            <ArrowUpRight size={16} className="group-hover:rotate-45 transition-transform duration-500" />
+          </a>
+          <button
+            type="button"
+            onClick={() => setCertOpen(true)}
+            data-testid="case-cta-view-certificate"
+            className="group inline-flex items-center justify-between gap-4 bg-electric hover:bg-white hover:text-ink-0 text-white px-6 py-3 rounded-full text-sm tracking-[0.2em] uppercase transition-colors duration-500"
+          >
+            View Certificate
+            <Award size={16} className="group-hover:scale-110 transition-transform duration-500" />
+          </button>
+        </div>
       </motion.div>
+
+      {/* Certificate modal */}
+      <Dialog open={certOpen} onOpenChange={setCertOpen}>
+        <DialogContent
+          data-testid="certificate-modal"
+          className="max-w-3xl w-[92vw] bg-ink-50 border border-white/10 p-4 md:p-6"
+        >
+          <DialogTitle className="text-xs uppercase tracking-[0.28em] text-electric mb-3 px-1">
+            Certificate — Advanced UI/UX Design (AI-Integrated)
+          </DialogTitle>
+          <div className="max-h-[80vh] overflow-y-auto rounded-md" data-lenis-prevent>
+            <img
+              src={CERT_URL}
+              alt="Shyam Kumar — Certificate of Completion, Advanced UI/UX Design"
+              className="w-full block rounded-md"
+              data-testid="certificate-image"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
 
       {/* Hero Section Studies — additional works */}
       <div className="mt-24 md:mt-32" data-testid="hero-studies">
